@@ -1,23 +1,3 @@
-# ==============================================================================
-# FILE: capstone_project.py
-# ==============================================================================
-# Capstone project
-# This file provides functions to create quantum circuits that execute Grover's
-# algorithm.
-# Learners are expected to implement the logic for the `four_qubit_grover`
-# function within the specified section of the function.
-#
-# Instructions:
-# - Complete the `four_qubit_grover` function as described in its docstring.
-# - Do not modify code outside the indicated editable section.
-# - You are only allowed to to use the Hadamard gate, the X gate and the
-#   multi controlled X gate.
-#
-# Testing:
-# - To verify your implementation, run the provided test file:
-#   test_capstone_project.py,  using the command:
-#   python -m unittest test_capstone_project.py
-# ------------------------------------------------------------------------------
 from qiskit import QuantumCircuit
 
 
@@ -30,8 +10,6 @@ def two_qubit_grover_11() -> QuantumCircuit:
                 with the solution 11.
     :rtype:     QuantumCircuit
     """
-    ############
-    # DO NOT EDIT THIS FUNCTION
     num_qubits = 2
     qc = QuantumCircuit(num_qubits)
 
@@ -63,8 +41,6 @@ def four_qubit_grover(solution: str) -> QuantumCircuit:
     """
     num_qubits = 4
     qc = QuantumCircuit(num_qubits)
-    ############
-    # ONLY EDIT UNDER HERE
     qc.h(range(num_qubits))
     last = num_qubits - 1
     for _ in range(3):
@@ -85,6 +61,4 @@ def four_qubit_grover(solution: str) -> QuantumCircuit:
         qc.x(range(num_qubits))
         qc.h(range(num_qubits))
 
-    # ONLY EDIT ABOVE HERE
-    ######
     return qc
